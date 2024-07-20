@@ -1,9 +1,18 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: [],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-
+import { fontFamily as _fontFamily } from "tailwindcss/defaultTheme";
+export const content = [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+];
+export const theme = {
+    extend: {
+        fontFamily: {
+            sans: [
+                "Bricolage Grotesque Variable",
+                "Inter Variable",
+                "Inter",
+                ..._fontFamily.sans,
+            ],
+        },
+    },
+};
+export const plugins = [];
