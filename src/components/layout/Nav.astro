@@ -1,6 +1,10 @@
 ---
 const menuitems = [
     {
+        title: "> bashout.",
+        path: "/",
+    },
+    {
         title: "About",
         path: "/about",
     },
@@ -13,11 +17,6 @@ const menuitems = [
 
 <nav>
     <ul class="flex flex-col lg:flex-row lg:gap-3">
-        <li
-            class="flex lg:px-3 py-2 items-center text-lg text-gray-600 hover:text-gray-900"
-        >
-            &gt; bashout.
-        </li>
         {
             menuitems.map((item) => (
                 <li>
@@ -25,7 +24,7 @@ const menuitems = [
                         href={item.path}
                         class="flex lg:px-3 py-2 items-center text-lg text-gray-600 hover:text-gray-900"
                     >
-                        <span> {item.title}</span>
+                        <span>{item.title}</span>
                     </a>
                 </li>
             ))

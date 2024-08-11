@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+import profileImage from "../assets/pfp.jpg";
+---
+
+<Layout title="bashout.">
+    <div class="profile-container text-center">
+        <Image
+            class="profile-image"
+            src={profileImage}
+            width="512"
+            height="512"
+            decoding="async"
+            loading="lazy"
+            alt="Artistic interpretation of male with long hair in gi"
+        />
+        <div class="contact-list">
+            <div class="contact-item">
+                <a
+                    href="https://www.linkedin.com/in/brian-toye/"
+                    target="_blank"
+                    ><Icon name="devicon:linkedin" />brian-toye</a
+                >
+            </div>
+            <div class="contact-item">
+                <a href="mailto:dev@bashout.work" target="_blank"
+                    ><Icon name="mdi:alternate-email" />dev@bashout.work</a
+                >
+            </div>
+            <div class="contact-item">
+                <a href="https://github.com/BashouT" target="_blank"
+                    ><Icon name="mdi:github" />dev@bashout.work</a
+                >
+            </div>
+        </div>
+    </div>
+</Layout>
+<style>
+    [data-icon] {
+        font-size: 3rem;
+    }
+
+    [data-icon="devicon:github"] {
+        color: white;
+    }
+
+    .contact-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-item a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .profile-image {
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    .profile-container {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 75vh;
+    }
+</style>
