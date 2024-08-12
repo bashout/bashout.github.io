@@ -8,32 +8,66 @@ import profileImage from "../assets/pfp.png";
 
 <Layout title="bashout.">
     <div class="profile-container text-center">
-        <Image
-            class="profile-image"
-            src={profileImage}
-            width="512"
-            height="512"
-            decoding="async"
-            loading="lazy"
-            alt="Artistic interpretation of male with long hair in gi"
-        />
-        <div class="contact-list">
-            <div class="contact-item">
-                <a
-                    href="https://www.linkedin.com/in/brian-toye/"
-                    target="_blank"
-                    ><Icon name="devicon:linkedin" />brian-toye</a
-                >
+        <div class="profile">
+            <Image
+                class="profile-image"
+                src={profileImage}
+                width="256"
+                height="256"
+                decoding="async"
+                loading="lazy"
+                alt="Artistic interpretation of male with long hair in gi"
+            />
+            <div class="contact-list">
+                <div class="contact-item">
+                    <a
+                        href="https://www.linkedin.com/in/brian-toye/"
+                        target="_blank"
+                        ><Icon name="devicon:linkedin" />brian-toye</a
+                    >
+                </div>
+                <div class="contact-item">
+                    <a href="mailto:dev@bashout.work" target="_blank"
+                        ><Icon name="mdi:alternate-email" />dev@bashout.work</a
+                    >
+                </div>
+                <div class="contact-item">
+                    <a href="https://github.com/BashouT" target="_blank"
+                        ><Icon name="mdi:github" />dev@bashout.work</a
+                    >
+                </div>
             </div>
-            <div class="contact-item">
-                <a href="mailto:dev@bashout.work" target="_blank"
-                    ><Icon name="mdi:alternate-email" />dev@bashout.work</a
-                >
-            </div>
-            <div class="contact-item">
-                <a href="https://github.com/BashouT" target="_blank"
-                    ><Icon name="mdi:github" />dev@bashout.work</a
-                >
+        </div>
+        <div class="professional-skills">
+            <h1>Professional Experience</h1>
+            <div class="professional-skills-list">
+                <!--TODO: Componentize the container elements to be reused -->
+                <div class="skills-container">
+                    <h2>Frameworks</h2>
+                    <ul class="skills-list">
+                        <Icon name="devicon:dotnetcore" />
+                        <Icon name="devicon:spring" />
+                        <Icon name="devicon:blazor" />
+                        <Icon name="devicon:angular" />
+                    </ul>
+                </div>
+                <div class="skills-container">
+                    <h2>Languages</h2>
+                    <ul class="skills-list">
+                        <Icon name="devicon:java" />
+                        <Icon name="devicon:csharp" />
+                        <Icon name="devicon:javascript" />
+                        <Icon name="devicon:typescript" />
+                    </ul>
+                </div>
+                <div class="skills-container">
+                    <h2>Tooling</h2>
+                    <ul class="skills-list">
+                        <Icon name="devicon:azure" />
+                        <Icon name="devicon:amazonwebservices-wordmark" />
+                        <Icon name="devicon:docker" />
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -45,6 +79,37 @@ import profileImage from "../assets/pfp.png";
 
     [data-icon="devicon:github"] {
         color: white;
+    }
+
+    .professional-skills {
+        width: 70%;
+    }
+
+    .skills-container {
+        background-color: #ffffd1;
+        color: black;
+        border: 5px solid violet;
+        border-radius: 5px;
+        box-shadow: 8px 8px purple;
+        flex-grow: 1;
+        width: 33%;
+        flex-shrink: 0;
+        margin-bottom: 2rem;
+        padding: 0.5rem;
+    }
+    .professional-skills-list {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .skill {
+        display: flex;
     }
 
     .contact-list {
@@ -61,6 +126,11 @@ import profileImage from "../assets/pfp.png";
         text-align: center;
     }
 
+    .contact-item:hover {
+        text-decoration: underline 2px;
+        text-decoration-color: violet;
+    }
+
     .contact-item a {
         display: flex;
         align-items: center;
@@ -69,6 +139,7 @@ import profileImage from "../assets/pfp.png";
 
     .profile-image {
         border-radius: 50%;
+        border: 5px solid violet;
         object-fit: cover;
         margin-bottom: 20px;
     }
@@ -80,6 +151,12 @@ import profileImage from "../assets/pfp.png";
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 75vh;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 </style>
