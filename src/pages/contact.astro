@@ -42,7 +42,7 @@ import profileImage from "../assets/pfp.png";
             <h1>Professional Experience</h1>
             <div class="professional-skills-list">
                 <!--TODO: Componentize the container elements to be reused -->
-                <div class="skills-container">
+                <div class="skills-container frameworks">
                     <h2>Frameworks</h2>
                     <ul class="skills-list">
                         <Icon name="devicon:dotnetcore" />
@@ -51,7 +51,7 @@ import profileImage from "../assets/pfp.png";
                         <Icon name="devicon:angular" />
                     </ul>
                 </div>
-                <div class="skills-container">
+                <div class="skills-container languages">
                     <h2>Languages</h2>
                     <ul class="skills-list">
                         <Icon name="devicon:java" />
@@ -60,7 +60,7 @@ import profileImage from "../assets/pfp.png";
                         <Icon name="devicon:typescript" />
                     </ul>
                 </div>
-                <div class="skills-container">
+                <div class="skills-container tooling">
                     <h2>Tooling</h2>
                     <ul class="skills-list">
                         <Icon name="devicon:azure" />
@@ -75,6 +75,7 @@ import profileImage from "../assets/pfp.png";
 <style>
     [data-icon] {
         font-size: 3rem;
+        color: black;
     }
 
     [data-icon="devicon:github"] {
@@ -88,15 +89,68 @@ import profileImage from "../assets/pfp.png";
     .skills-container {
         background-color: #ffffd1;
         color: black;
-        border: 5px solid violet;
+        border: 5px solid #f3b0c3;
         border-radius: 5px;
-        box-shadow: 8px 8px purple;
         flex-grow: 1;
         width: 33%;
         flex-shrink: 0;
         margin-bottom: 2rem;
         padding: 0.5rem;
+
+        /* animation related */
+        opacity: 0;
+        animation:
+            slideIn 1.5s forwards,
+            shadow 1s 5s forwards;
     }
+
+    /* TODO: identify why this doesn't apply */
+    .skills-container:hover {
+        transform: scale(1.2);
+    }
+
+    .frameworks {
+        animation-delay: 1.5s;
+    }
+
+    .languages {
+        animation-delay: 1s;
+    }
+
+    .tooling {
+        animation-delay: 0.5s;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20%);
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes shadow {
+        from {
+            box-shadow: none;
+        }
+        to {
+            box-shadow: 8px 8px #cbaacb;
+        }
+    }
+
     .professional-skills-list {
         display: flex;
         gap: 1rem;
@@ -126,11 +180,6 @@ import profileImage from "../assets/pfp.png";
         text-align: center;
     }
 
-    .contact-item:hover {
-        text-decoration: underline 2px;
-        text-decoration-color: violet;
-    }
-
     .contact-item a {
         display: flex;
         align-items: center;
@@ -139,9 +188,11 @@ import profileImage from "../assets/pfp.png";
 
     .profile-image {
         border-radius: 50%;
-        border: 5px solid violet;
+        border: 5px solid #f3b0c3;
         object-fit: cover;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        animation: fadeIn 1s 0s ease-in-out;
     }
 
     .profile-container {
