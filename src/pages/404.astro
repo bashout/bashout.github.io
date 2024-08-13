@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+    getLangFromUrl,
+    useTranslations,
+    useTranslatedPath,
+} from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<Layout title="Page not found">
+    <h1 class="flex align-middle justify-center text-9xl">
+        <span class="pastel-purple">4</span>
+        <span class="pastel-red">0</span>
+        <span class="pastel-blue">4</span>
+    </h1>
+    <div class="flex flex-col items-center justify-center text-2xl">
+        <p>Unfortunately what you're looking for is not here.</p>
+        <a href={translatePath("/")}>
+            {t("home")}
+        </a>
+    </div>
+</Layout>
+
+<style>
+    a {
+        margin: 1rem;
+        background: white;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 4px 4px black;
+    }
+</style>
