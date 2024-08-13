@@ -1,40 +1,43 @@
 ---
-const menuitems = [
-    {
-        title: "bashout.",
-        path: "/",
-    },
-    {
-        title: "about",
-        path: "/about",
-    },
-    {
-        title: "contact",
-        path: "/contact",
-    },
-];
+import {
+    getLangFromUrl,
+    useTranslations,
+    useTranslatedPath,
+} from "../../i18n/utils";
+import LanguagePicker from "../../components/LanguagePicker.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <nav>
-    <ul class="flex flex-col lg:flex-row lg:gap-3">
-        {
-            menuitems.map((item) => (
-                <li>
-                    <a
-                        href={item.path}
-                        class="flex lg:px-3 py-2 items-center text-lg text-gray-600 hover:text-gray-900"
-                    >
-                        <span>{item.title}</span>
-                    </a>
-                </li>
-            ))
-        }
-    </ul>
-</nav>
+    <div class="flex flex-col lg:flex-row lg:gap-3">
+        <ul class="flex flex-row lg:gap-3">
+            <li>
+                <a href={translatePath("//")} class="">
+                    {t("title")}
+                </a>
+            </li>
+            <li>
+                <a href={translatePath("/contact/")}>
+                    {t("nav.contact")}
+                </a>
+            </li>
+        </ul>
+        <LanguagePicker />
+    </div>
 
-<style>
-    nav {
-        background-color: #abdee6;
-        border-bottom: 5px solid black;
-    }
-</style>
+    <style>
+        nav {
+            background-color: #abdee6;
+            border-bottom: 5px solid black;
+            width: 100%;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+    </style>
+</nav>

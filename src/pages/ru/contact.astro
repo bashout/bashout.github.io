@@ -1,0 +1,213 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+import profileImage from "../../assets/pfp.png";
+---
+
+<Layout title="bashout.">
+    <div class="profile-container text-center">
+        <div class="profile">
+            <Image
+                class="profile-image"
+                src={profileImage}
+                width="256"
+                height="256"
+                decoding="async"
+                loading="eager"
+                alt="Artistic interpretation of male with long hair in gi"
+            />
+            <div class="contact-list">
+                <div class="contact-item">
+                    <a
+                        href="https://www.linkedin.com/in/brian-toye/"
+                        target="_blank"
+                        ><Icon name="devicon:linkedin" />brian-toye</a
+                    >
+                </div>
+                <div class="contact-item">
+                    <a href="mailto:dev@bashout.work" target="_blank"
+                        ><Icon name="mdi:alternate-email" />dev@bashout.work</a
+                    >
+                </div>
+                <div class="contact-item">
+                    <a href="https://github.com/BashouT" target="_blank"
+                        ><Icon name="mdi:github" />dev@bashout.work</a
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="professional-skills">
+            <h1>Профессиональный опыт</h1>
+            <div class="professional-skills-list">
+                <!--TODO: Componentize the container elements to be reused -->
+                <div class="skills-container frameworks">
+                    <h2>Рамки</h2>
+                    <ul class="skills-list">
+                        <Icon name="devicon:dotnetcore" />
+                        <Icon name="devicon:spring" />
+                        <Icon name="devicon:blazor" />
+                        <Icon name="devicon:angular" />
+                    </ul>
+                </div>
+                <div class="skills-container languages">
+                    <h2>Языки программирования</h2>
+                    <ul class="skills-list">
+                        <Icon name="devicon:java" />
+                        <Icon name="devicon:csharp" />
+                        <Icon name="devicon:javascript" />
+                        <Icon name="devicon:typescript" />
+                    </ul>
+                </div>
+                <div class="skills-container tooling">
+                    <h2>Инструменты</h2>
+                    <ul class="skills-list">
+                        <Icon name="devicon:azure" />
+                        <Icon name="devicon:amazonwebservices-wordmark" />
+                        <Icon name="devicon:docker" />
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+<style>
+    [data-icon] {
+        font-size: 3rem;
+        color: black;
+    }
+
+    [data-icon="devicon:github"] {
+        color: white;
+    }
+
+    .professional-skills {
+        width: 70%;
+    }
+
+    .skills-container {
+        background-color: #ffffd1;
+        color: black;
+        border: 5px solid #f3b0c3;
+        border-radius: 5px;
+        flex-grow: 1;
+        width: 33%;
+        flex-shrink: 0;
+        margin-bottom: 2rem;
+        padding: 0.5rem;
+
+        /* animation related */
+        opacity: 0;
+        animation:
+            slideIn 1.5s forwards,
+            shadow 1s 5s forwards;
+    }
+
+    /* TODO: identify why this doesn't apply */
+    .skills-container:hover {
+        transform: scale(1.2);
+    }
+
+    .frameworks {
+        animation-delay: 1.5s;
+    }
+
+    .languages {
+        animation-delay: 1s;
+    }
+
+    .tooling {
+        animation-delay: 0.5s;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20%);
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes shadow {
+        from {
+            box-shadow: none;
+        }
+        to {
+            box-shadow: 8px 8px #cbaacb;
+        }
+    }
+
+    .professional-skills-list {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .skill {
+        display: flex;
+    }
+
+    .contact-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-item a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .profile-image {
+        border-radius: 50%;
+        border: 5px solid #f3b0c3;
+        object-fit: cover;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        animation: fadeIn 1s 0s ease-in-out;
+    }
+
+    .profile-container {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+</style>
