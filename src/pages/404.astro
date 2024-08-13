@@ -18,19 +18,11 @@ const translatePath = useTranslatedPath(lang);
         <span class="pastel-blue">4</span>
     </h1>
     <div class="flex flex-col items-center justify-center text-2xl">
-        <p>Unfortunately what you're looking for is not here.</p>
-        <a href={translatePath("/")}>
+        <p>{t("notFound")}</p>
+        <a class="button" href={translatePath("/")}>
             {t("home")}
         </a>
     </div>
 </Layout>
 
-<style>
-    a {
-        margin: 1rem;
-        background: white;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 4px 4px black;
-    }
-</style>
+<style></style>

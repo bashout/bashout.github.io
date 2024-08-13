@@ -8,12 +8,14 @@ export const showDefaultLang = false;
 export const ui = {
     en: {
         title: "bashout.",
-        "nav.contact": "contact",
+        contact: "contact",
         home: "home",
+        notFound: "Unfortunately what you're looking for is not here.",
     },
     ru: {
-        title: "башаут.",
-        "nav.contact": "",
+        title: "bashout.",
+        contact: "контакт",
         home: "домашняя страница",
+        notFound: "К сожалению, страница не найдена",
     },
 } as const;
