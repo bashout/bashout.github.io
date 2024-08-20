@@ -109,5 +109,44 @@ const lang = getLangFromUrl(Astro.url);
             text-decoration-color: #cbaacb;
             border-radius: 10px;
         }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20%);
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes shadow {
+            from {
+                box-shadow: none;
+            }
+            to {
+                box-shadow: 8px 8px #cbaacb;
+            }
+        }
     </style>
 </html>
