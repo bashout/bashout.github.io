@@ -1,0 +1,91 @@
+---
+import { Icon } from "astro-icon/components";
+import {
+    getLangFromUrl,
+    useTranslations,
+    useTranslatedPath,
+} from "../../i18n/utils";
+
+import LanguagePicker from "../../components/LanguagePicker.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<a id="navTitle" href={translatePath("/")} class="flex self-center">
+    {t("title")}
+</a>
+<ul id="mobileNavigation" class="hidden flex flex-row w-full gap-3">
+    <li>
+        <a href={translatePath("/contact/")}>
+            {t("contact")}
+        </a>
+    </li>
+    <LanguagePicker />
+</ul>
+<Icon
+    id="openMenuButton"
+    name="mdi:hamburger-menu"
+    class="flex navButton mt-auto mb-auto ml-auto size-6"
+/>
+<Icon
+    id="closeMenuButton"
+    name="mdi:close"
+    class="mt-auto navButton mb-auto size-7 hidden"
+/>
+
+<style>
+    @media screen and (max-width: 640px) {
+        li:nth-child(1) {
+            margin-left: auto;
+        }
+    }
+
+    @media screen and (min-width: 641px) {
+        #navTitle {
+            display: none;
+        }
+
+        .navButton {
+            display: none;
+        }
+
+        #mobileNavigation {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // open menu
+        document
+            .getElementById("openMenuButton")
+            ?.addEventListener("click", () => {
+                document
+                    .getElementById("mobileNavigation")
+                    ?.classList.remove("hidden");
+                document
+                    .getElementById("openMenuButton")
+                    ?.classList.add("hidden");
+                document
+                    .getElementById("closeMenuButton")
+                    ?.classList.remove("hidden");
+            });
+
+        // close menu
+        document
+            .getElementById("closeMenuButton")
+            ?.addEventListener("click", () => {
+                document
+                    .getElementById("mobileNavigation")
+                    ?.classList.add("hidden");
+                document
+                    .getElementById("openMenuButton")
+                    ?.classList.remove("hidden");
+                document
+                    .getElementById("closeMenuButton")
+                    ?.classList.add("hidden");
+            });
+    });
+</script>
