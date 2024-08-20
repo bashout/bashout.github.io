@@ -24,17 +24,19 @@ import profileImage from "../assets/pfp.png";
                     <a
                         href="https://www.linkedin.com/in/brian-toye/"
                         target="_blank"
-                        ><Icon name="devicon:linkedin" />brian-toye</a
+                        ><Icon name="devicon:linkedin" /><p>brian-toye</p></a
                     >
                 </div>
                 <div class="contact-item">
                     <a href="mailto:dev@bashout.work" target="_blank"
-                        ><Icon name="mdi:alternate-email" />dev@bashout.work</a
+                        ><Icon name="mdi:alternate-email" /><p>
+                            dev@bashout.work
+                        </p></a
                     >
                 </div>
                 <div class="contact-item">
                     <a href="https://github.com/BashouT" target="_blank"
-                        ><Icon name="mdi:github" />dev@bashout.work</a
+                        ><Icon name="mdi:github" /><p>dev@bashout.work</p></a
                     >
                 </div>
             </div>
@@ -92,5 +94,11 @@ import profileImage from "../assets/pfp.png";
         align-items: center;
         justify-content: center;
         flex-direction: column;
+    }
+
+    @media screen and (max-width: 640px) {
+        .contact-list p {
+            display: none;
+        }
     }
 </style>
