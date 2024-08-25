@@ -1,5 +1,5 @@
 ---
-
+import { Icon } from "astro-icon/components";
 ---
 
 <body>
@@ -22,6 +22,21 @@
                     been recently improved due to internally developed portals
                     which allowed more dynamic, automated commissioning.
                 </p>
+                <div class="flex flex-row justify-center gap-12">
+                    <a
+                        target="_blank"
+                        href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"
+                        ><Icon name="devicon:blazor" /></a
+                    >
+                    <a target="_blank" href="https://azure.microsoft.com/en-us"
+                        ><Icon name="devicon:azure" /></a
+                    >
+                    <a
+                        target="_blank"
+                        href="https://dotnet.microsoft.com/en-us/languages/csharp"
+                        ><Icon name="devicon:csharp" /></a
+                    >
+                </div>
             </div>
         </div>
         <div class="container left">
@@ -43,6 +58,21 @@
                     by Granicus and formed the basis of their permissions tool
                     still used today.
                 </p>
+                <div class="flex flex-row justify-center gap-12">
+                    <a target="_blank" href="https://angular.dev/"
+                        ><Icon name="devicon:angular" /></a
+                    >
+                    <a
+                        target="_blank"
+                        href="https://learn.microsoft.com/en-us/dotnet/core/introduction"
+                        ><Icon name="devicon:dotnetcore" /></a
+                    >
+                    <a
+                        target="_blank"
+                        href="https://azure.microsoft.com/en-us/products/devops/"
+                        ><Icon name="devicon:azuredevops" /></a
+                    >
+                </div>
             </div>
         </div>
         <div class="container right">
@@ -64,6 +94,21 @@
                     it could be delivered to the business and begin providing
                     value.
                 </p>
+                <div class="flex flex-row justify-center gap-12">
+                    <a
+                        target="_blank"
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                        ><Icon name="devicon:javascript" /></a
+                    >
+                    <a
+                        target="_blank"
+                        href="https://developer.mozilla.org/en-US/docs/Glossary/HTML"
+                        ><Icon name="devicon:html5" /></a
+                    >
+                    <a target="_blank" href="https://git-scm.com/"
+                        ><Icon name="devicon:git" /></a
+                    >
+                </div>
             </div>
         </div>
         <div class="container left">
@@ -80,7 +125,6 @@
     .timeline {
         position: relative;
         max-width: 1200px;
-        margin: 0 auto;
     }
 
     /* The actual timeline (the vertical ruler) */
@@ -155,6 +199,10 @@
         position: relative;
 
         animation: fadeIn;
+    }
+
+    [data-icon] {
+        font-size: 2rem;
     }
 
     /* Media queries - Responsive timeline on screens less than 600px wide */
