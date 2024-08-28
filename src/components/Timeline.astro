@@ -164,25 +164,11 @@ import { Icon } from "astro-icon/components";
     /* Place the container to the left */
     .left {
         left: 0;
-
-        .content {
-            opacity: 0;
-            animation:
-                slideInLeft 1.5s forwards,
-                shadow 1s 1s forwards;
-        }
     }
 
     /* Place the container to the right */
     .right {
         left: 50%;
-
-        .content {
-            opacity: 0;
-            animation:
-                slideInRight 1.5s forwards,
-                shadow 1s 1s forwards;
-        }
     }
 
     /* Fix the circle for containers on the right side */
@@ -204,6 +190,26 @@ import { Icon } from "astro-icon/components";
         font-size: 2rem;
     }
 
+    @media screen and (min-width: 641px) {
+        .left {
+            .content {
+                opacity: 0;
+                animation:
+                    slideInLeft 1.5s forwards,
+                    shadow 1s 1s forwards;
+            }
+        }
+
+        .right {
+            .content {
+                opacity: 0;
+                animation:
+                    slideInRight 1.5s forwards,
+                    shadow 1s 1s forwards;
+            }
+        }
+    }
+
     /* Media queries - Responsive timeline on screens less than 600px wide */
     @media screen and (max-width: 640px) {
         /* Place the timelime to the left */
@@ -216,6 +222,12 @@ import { Icon } from "astro-icon/components";
             width: 100%;
             padding-left: 70px;
             padding-right: 25px;
+        }
+
+        .content {
+            animation:
+                fadeIn 1s forwards,
+                shadow 1s 1s forwards;
         }
 
         /* Make sure that all arrows are pointing leftwards */
