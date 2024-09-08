@@ -13,15 +13,28 @@ import { Icon } from "astro-icon/components";
         <div class="container right">
             <div class="content">
                 <h2>February 2021 - June 2023</h2>
-                <p>
-                    Responsible for the maintainance and further feature
-                    delivery of multiple social care focused integration
-                    applications. This includes the delivery of a new financial
-                    solution which enabled the business to clawback significant
-                    overspend due to historically poor commissioning which had
-                    been recently improved due to internally developed portals
-                    which allowed more dynamic, automated commissioning.
-                </p>
+                <ul>
+                    <li>
+                        Maintained and delivered new features for multiple
+                        social care-focused integration applications.
+                    </li>
+                    <li>
+                        Delivered a new financial solution that enabled the
+                        business to recover significant overspend.
+                    </li>
+                    <li>
+                        Addressed historical overspending caused by poor
+                        commissioning.
+                    </li>
+                    <li>
+                        Improved commissioning processes through the development
+                        of internal portals.
+                    </li>
+                    <li>
+                        Implemented dynamic and automated commissioning via the
+                        internally developed portals.
+                    </li>
+                </ul>
                 <div class="flex flex-row justify-center gap-12">
                     <a
                         target="_blank"
@@ -42,22 +55,27 @@ import { Icon } from "astro-icon/components";
         <div class="container left">
             <div class="content">
                 <h2>March 2019 - February 2021</h2>
-                <p>
-                    Working within a Scrum team of seven members where I scrum
-                    mastered and also worked to deliver a bespoke portal
-                    allowing the collection of service delivery from third party
-                    organisations. Also delivered a nationally recognised social
-                    care commissioning portal for NCC which allowed more rapid
-                    movement of patients from hospital to home based care. Part
-                    of this work involved reverse engineering a very
-                    undocumented interaction method with the key social care
-                    system and writing an API that makes this idempotent and
-                    safe for multiple third party applications to consume. Also
-                    helped design and develop the Firmstep scanner evolving into
-                    a permissions monitoring tool which ultimately was purchased
-                    by Granicus and formed the basis of their permissions tool
-                    still used today.
-                </p>
+                <ul>
+                    <li>
+                        Developed new features for social care integration
+                        applications.
+                    </li>
+                    <li>
+                        Created a financial solution to recover significant
+                        business overspend.
+                    </li>
+                    <li>
+                        Resolved historical overspending issues from poor
+                        commissioning practices.
+                    </li>
+                    <li>
+                        Enhanced commissioning processes with internal portals.
+                    </li>
+                    <li>
+                        Automated and streamlined commissioning through dynamic
+                        internal portals.
+                    </li>
+                </ul>
                 <div class="flex flex-row justify-center gap-12">
                     <a target="_blank" href="https://angular.dev/"
                         ><Icon name="devicon:angular" /></a
@@ -78,22 +96,31 @@ import { Icon } from "astro-icon/components";
         <div class="container right">
             <div class="content">
                 <h2>October 2017 - March 2019</h2>
-                <p>
-                    Working to make custom integrations with the authority's
-                    social care system over a SOAP based API, implementing
-                    custom business logic within a Web API application that took
-                    user input from GovService (at the time Firmstep). Also
-                    developed custom forms and form templates for use across a
-                    number of the authority's workflows within GovService, such
-                    as the user lookup and it's associated backend API. Limited
-                    experience delivering a GovService workflow which took data
-                    from an API, transformed it using the built in XSLT
-                    stylesheet functionality to show only relevant data from the
-                    third party endpoint to the end user. Rearchitecting a
-                    heavily over-schedule undelivered day care solution so that
-                    it could be delivered to the business and begin providing
-                    value.
-                </p>
+                <ul>
+                    <li>
+                        Developed custom integrations with the authority's
+                        social care system using a SOAP-based API.
+                    </li>
+                    <li>
+                        Implemented custom business logic in a Web API
+                        application that processed user input from GovService
+                        (Firmstep).
+                    </li>
+                    <li>
+                        Created custom forms and templates for various authority
+                        workflows within GovService, including user lookup and
+                        backend API integration.
+                    </li>
+                    <li>
+                        Gained limited experience with GovService workflows that
+                        utilized API data and XSLT to display relevant
+                        information to users.
+                    </li>
+                    <li>
+                        Rearchitected an over-scheduled day care solution to
+                        ensure successful delivery and provide business value.
+                    </li>
+                </ul>
                 <div class="flex flex-row justify-center gap-12">
                     <a
                         target="_blank"
@@ -188,6 +215,60 @@ import { Icon } from "astro-icon/components";
 
     [data-icon] {
         font-size: 2rem;
+    }
+
+    ul {
+        list-style: none; /* Remove default bullets */
+        padding: 0;
+    }
+
+    ul li {
+        position: relative;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-bottom: 8px; /* Reduced spacing */
+    }
+
+    ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 10px;
+        height: 10px;
+        background-color: #c5e1a5; /* Pastel green bullet */
+        border-radius: 50%;
+    }
+
+    ul li::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 10px;
+        height: 10px;
+        background-color: #c5e1a5; /* Matching pastel green bullet */
+        border-radius: 50%;
+    }
+
+    ul li:nth-child(2)::before,
+    ul li:nth-child(2)::after {
+        background-color: #ffe082; /* Pastel yellow bullet */
+    }
+
+    ul li:nth-child(3)::before,
+    ul li:nth-child(3)::after {
+        background-color: #80deea; /* Pastel blue bullet */
+    }
+
+    ul li:nth-child(4)::before,
+    ul li:nth-child(4)::after {
+        background-color: #ffccbc; /* Pastel peach bullet */
+    }
+
+    ul li:nth-child(5)::before,
+    ul li:nth-child(5)::after {
+        background-color: #b39ddb; /* Pastel purple bullet */
     }
 
     @media screen and (min-width: 641px) {
