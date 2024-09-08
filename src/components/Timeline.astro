@@ -1,147 +1,98 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const { content } = Astro.props; // Destructure content and default language
 ---
 
 <body>
     <div class="timeline">
         <div class="container left">
             <div class="content">
-                <h2>June 2023 - Present</h2>
-                <p></p>
+                <h2>{content.section1}</h2>
             </div>
         </div>
+
         <div class="container right">
             <div class="content">
-                <h2>February 2021 - June 2023</h2>
+                <h2>{content.section2}</h2>
                 <ul>
-                    <li>
-                        Maintained and delivered new features for multiple
-                        social care-focused integration applications.
-                    </li>
-                    <li>
-                        Delivered a new financial solution that enabled the
-                        business to recover significant overspend.
-                    </li>
-                    <li>
-                        Addressed historical overspending caused by poor
-                        commissioning.
-                    </li>
-                    <li>
-                        Improved commissioning processes through the development
-                        of internal portals.
-                    </li>
-                    <li>
-                        Implemented dynamic and automated commissioning via the
-                        internally developed portals.
-                    </li>
+                    {content.jobs[0].map((job: String) => <li>{job}</li>)}
                 </ul>
                 <div class="flex flex-row justify-center gap-12">
                     <a
                         target="_blank"
                         href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"
-                        ><Icon name="devicon:blazor" /></a
                     >
-                    <a target="_blank" href="https://azure.microsoft.com/en-us"
-                        ><Icon name="devicon:azure" /></a
-                    >
+                        <Icon name="devicon:blazor" />
+                    </a>
+                    <a target="_blank" href="https://azure.microsoft.com/en-us">
+                        <Icon name="devicon:azure" />
+                    </a>
                     <a
                         target="_blank"
                         href="https://dotnet.microsoft.com/en-us/languages/csharp"
-                        ><Icon name="devicon:csharp" /></a
                     >
+                        <Icon name="devicon:csharp" />
+                    </a>
                 </div>
             </div>
         </div>
+
         <div class="container left">
             <div class="content">
-                <h2>March 2019 - February 2021</h2>
+                <h2>{content.section3}</h2>
                 <ul>
-                    <li>
-                        Developed new features for social care integration
-                        applications.
-                    </li>
-                    <li>
-                        Created a financial solution to recover significant
-                        business overspend.
-                    </li>
-                    <li>
-                        Resolved historical overspending issues from poor
-                        commissioning practices.
-                    </li>
-                    <li>
-                        Enhanced commissioning processes with internal portals.
-                    </li>
-                    <li>
-                        Automated and streamlined commissioning through dynamic
-                        internal portals.
-                    </li>
+                    {content.jobs[1].map((job: String) => <li>{job}</li>)}
                 </ul>
                 <div class="flex flex-row justify-center gap-12">
-                    <a target="_blank" href="https://angular.dev/"
-                        ><Icon name="devicon:angular" /></a
-                    >
+                    <a target="_blank" href="https://angular.dev/">
+                        <Icon name="devicon:angular" />
+                    </a>
                     <a
                         target="_blank"
                         href="https://learn.microsoft.com/en-us/dotnet/core/introduction"
-                        ><Icon name="devicon:dotnetcore" /></a
                     >
+                        <Icon name="devicon:dotnetcore" />
+                    </a>
                     <a
                         target="_blank"
                         href="https://azure.microsoft.com/en-us/products/devops/"
-                        ><Icon name="devicon:azuredevops" /></a
                     >
+                        <Icon name="devicon:azuredevops" />
+                    </a>
                 </div>
             </div>
         </div>
+
         <div class="container right">
             <div class="content">
-                <h2>October 2017 - March 2019</h2>
+                <h2>{content.section4}</h2>
                 <ul>
-                    <li>
-                        Developed custom integrations with the authority's
-                        social care system using a SOAP-based API.
-                    </li>
-                    <li>
-                        Implemented custom business logic in a Web API
-                        application that processed user input from GovService
-                        (Firmstep).
-                    </li>
-                    <li>
-                        Created custom forms and templates for various authority
-                        workflows within GovService, including user lookup and
-                        backend API integration.
-                    </li>
-                    <li>
-                        Gained limited experience with GovService workflows that
-                        utilized API data and XSLT to display relevant
-                        information to users.
-                    </li>
-                    <li>
-                        Rearchitected an over-scheduled day care solution to
-                        ensure successful delivery and provide business value.
-                    </li>
+                    {content.jobs[2].map((job: String) => <li>{job}</li>)}
                 </ul>
                 <div class="flex flex-row justify-center gap-12">
                     <a
                         target="_blank"
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                        ><Icon name="devicon:javascript" /></a
                     >
+                        <Icon name="devicon:javascript" />
+                    </a>
                     <a
                         target="_blank"
                         href="https://developer.mozilla.org/en-US/docs/Glossary/HTML"
-                        ><Icon name="devicon:html5" /></a
                     >
-                    <a target="_blank" href="https://git-scm.com/"
-                        ><Icon name="devicon:git" /></a
-                    >
+                        <Icon name="devicon:html5" />
+                    </a>
+                    <a target="_blank" href="https://git-scm.com/">
+                        <Icon name="devicon:git" />
+                    </a>
                 </div>
             </div>
         </div>
+
         <div class="container left">
             <div class="content">
-                <h2>2013 - 2017</h2>
-                <p></p>
+                <h2>{content.section5}</h2>
             </div>
         </div>
     </div>

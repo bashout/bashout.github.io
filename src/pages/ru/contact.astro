@@ -1,9 +1,41 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import Timeline from "../../components/Timeline.astro";
 import { Image } from "astro:assets";
 
 import profileImage from "../../assets/pfp.png";
+
+const content = {
+    section1: "Июнь 2023 - Настоящее время",
+    section2: "Февраль 2021 - Июнь 2023",
+    section3: "Март 2019 - Февраль 2021",
+    section4: "Октябрь 2017 - Март 2019",
+    section5: "2013 - 2017",
+    jobs: [
+        [
+            "Поддерживал и разрабатывал новые функции для нескольких приложений, ориентированных на интеграцию в социальную помощь.",
+            "Разработал новое финансовое решение, позволившее компании компенсировать значительные перерасходы.",
+            "Решил проблему исторических перерасходов, вызванных плохой комиссией.",
+            "Улучшил процессы комиссии через разработку внутренних порталов.",
+            "Реализовал динамическую и автоматизированную комиссию через внутренние разработанные порталы.",
+        ],
+        [
+            "Разработал новые функции для приложений интеграции в социальную помощь.",
+            "Создал финансовое решение для восстановления значительного перерасхода.",
+            "Решил проблемы исторического перерасхода, вызванного неэффективной комиссией.",
+            "Улучшил процессы комиссии с помощью внутренних порталов.",
+            "Автоматизировал и упростил комиссионные процессы с помощью динамических внутренних порталов.",
+        ],
+        [
+            "Разработал пользовательские интеграции с системой социальной помощи органа с использованием SOAP API.",
+            "Реализовал пользовательскую бизнес-логику в приложении Web API, обрабатывающем ввод данных от GovService (Firmstep).",
+            "Создал пользовательские формы и шаблоны для различных рабочих процессов органа внутри GovService, включая поиск пользователей и интеграцию с API.",
+            "Получил ограниченный опыт работы с рабочими процессами GovService, использующими данные API и XSLT для отображения релевантной информации пользователям.",
+            "Реархитектировал перепланированное решение для дневного ухода, чтобы обеспечить его успешную реализацию и пользу для бизнеса.",
+        ],
+    ],
+};
 ---
 
 <Layout title="bashout.">
@@ -23,53 +55,31 @@ import profileImage from "../../assets/pfp.png";
                     <a
                         href="https://www.linkedin.com/in/brian-toye/"
                         target="_blank"
-                        ><Icon name="devicon:linkedin" />brian-toye</a
+                        aria-label="LinkedIn"
+                        ><Icon name="devicon:linkedin" /><p>brian-toye</p></a
                     >
                 </div>
                 <div class="contact-item">
-                    <a href="mailto:dev@bashout.work" target="_blank"
-                        ><Icon name="mdi:alternate-email" />dev@bashout.work</a
+                    <a
+                        href="mailto:dev@bashout.work"
+                        target="_blank"
+                        aria-label="Email"
+                        ><Icon name="mdi:alternate-email" /><p>
+                            dev@bashout.work
+                        </p></a
                     >
                 </div>
                 <div class="contact-item">
-                    <a href="https://github.com/BashouT" target="_blank"
-                        ><Icon name="mdi:github" />dev@bashout.work</a
+                    <a
+                        href="https://github.com/BashouT"
+                        target="_blank"
+                        aria-label="GitHub"
+                        ><Icon name="mdi:github" /><p>dev@bashout.work</p></a
                     >
                 </div>
             </div>
         </div>
-        <div class="professional-skills">
-            <h1>Профессиональный опыт</h1>
-            <div class="professional-skills-list">
-                <!--TODO: Componentize the container elements to be reused -->
-                <div class="skills-container frameworks">
-                    <h2>Фрайвморкс</h2>
-                    <ul class="skills-list">
-                        <Icon name="devicon:dotnetcore" />
-                        <Icon name="devicon:spring" />
-                        <Icon name="devicon:blazor" />
-                        <Icon name="devicon:angular" />
-                    </ul>
-                </div>
-                <div class="skills-container languages">
-                    <h2>Языки программирования</h2>
-                    <ul class="skills-list">
-                        <Icon name="devicon:java" />
-                        <Icon name="devicon:csharp" />
-                        <Icon name="devicon:javascript" />
-                        <Icon name="devicon:typescript" />
-                    </ul>
-                </div>
-                <div class="skills-container tooling">
-                    <h2>Инструменты</h2>
-                    <ul class="skills-list">
-                        <Icon name="devicon:azure" />
-                        <Icon name="devicon:amazonwebservices-wordmark" />
-                        <Icon name="devicon:docker" />
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <Timeline content={content} />
     </div>
 </Layout>
 <style>
@@ -78,99 +88,12 @@ import profileImage from "../../assets/pfp.png";
         color: black;
     }
 
-    [data-icon="devicon:github"] {
-        color: white;
-    }
-
-    .professional-skills {
-        width: 70%;
-    }
-
-    .skills-container {
-        background-color: #ffffd1;
-        color: black;
-        border: 5px solid #f3b0c3;
-        border-radius: 5px;
-        flex-grow: 1;
-        width: 33%;
-        flex-shrink: 0;
-        margin-bottom: 2rem;
-        padding: 0.5rem;
-
-        /* animation related */
-        opacity: 0;
-        animation:
-            slideIn 1.5s forwards,
-            shadow 1s 5s forwards;
-    }
-
-    /* TODO: identify why this doesn't apply */
-    .skills-container:hover {
-        transform: scale(1.2);
-    }
-
-    .frameworks {
-        animation-delay: 1.5s;
-    }
-
-    .languages {
-        animation-delay: 1s;
-    }
-
-    .tooling {
-        animation-delay: 0.5s;
-    }
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-            transform: translateY(20%);
-        }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slideIn {
-        from {
-            transform: translateX(-100%);
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes shadow {
-        from {
-            box-shadow: none;
-        }
-        to {
-            box-shadow: 8px 8px #cbaacb;
-        }
-    }
-
-    .professional-skills-list {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-
-    .skill {
-        display: flex;
-    }
-
     .contact-list {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 20px;
+        padding-bottom: 1rem;
     }
 
     .contact-item {
@@ -209,5 +132,11 @@ import profileImage from "../../assets/pfp.png";
         align-items: center;
         justify-content: center;
         flex-direction: column;
+    }
+
+    @media screen and (max-width: 640px) {
+        .contact-list p {
+            display: none;
+        }
     }
 </style>

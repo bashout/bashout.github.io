@@ -5,6 +5,37 @@ import Timeline from "../components/Timeline.astro";
 import { Image } from "astro:assets";
 
 import profileImage from "../assets/pfp.png";
+
+const content = {
+    section1: "June 2023 - Present",
+    section2: "February 2021 - June 2023",
+    section3: "March 2019 - February 2021",
+    section4: "October 2017 - March 2019",
+    section5: "2013 - 2017",
+    jobs: [
+        [
+            "Maintained and delivered new features for multiple social care-focused integration applications.",
+            "Delivered a new financial solution that enabled the business to recover significant overspend.",
+            "Addressed historical overspending caused by poor commissioning.",
+            "Improved commissioning processes through the development of internal portals.",
+            "Implemented dynamic and automated commissioning via the internally developed portals.",
+        ],
+        [
+            "Developed new features for social care integration applications.",
+            "Created a financial solution to recover significant business overspend.",
+            "Resolved historical overspending issues from poor commissioning practices.",
+            "Enhanced commissioning processes with internal portals.",
+            "Automated and streamlined commissioning through dynamic internal portals.",
+        ],
+        [
+            "Developed custom integrations with the authority's social care system using a SOAP-based API.",
+            "Implemented custom business logic in a Web API application that processed user input from GovService (Firmstep).",
+            "Created custom forms and templates for various authority workflows within GovService, including user lookup and backend API integration.",
+            "Gained limited experience with GovService workflows that utilized API data and XSLT to display relevant information to users.",
+            "Rearchitected an over-scheduled day care solution to ensure successful delivery and provide business value.",
+        ],
+    ],
+};
 ---
 
 <Layout title="bashout.">
@@ -48,7 +79,7 @@ import profileImage from "../assets/pfp.png";
                 </div>
             </div>
         </div>
-        <Timeline />
+        <Timeline content={content} />
     </div>
 </Layout>
 <style>
