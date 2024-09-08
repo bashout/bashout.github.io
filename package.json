@@ -11,9 +11,9 @@
     },
     "dependencies": {
         "@astrojs/tailwind": "^5.1.0",
-        "@iconify-json/devicon": "^1.1.50",
-        "@iconify-json/mdi": "^1.1.68",
-        "astro": "^4.14.5",
+        "@iconify-json/devicon": "^1.2.0",
+        "@iconify-json/mdi": "^1.2.0",
+        "astro": "^4.15.4",
         "astro-icon": "^1.1.1",
         "sharp": "^0.33.5",
         "tailwindcss": "^3.4.10"
