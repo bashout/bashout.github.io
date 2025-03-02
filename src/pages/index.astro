@@ -1,18 +1,65 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import profileImage from "../assets/pfp-irl.png";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="bashout.">
     <main>
-        <h1>bashout.</h1>
-        <h2>Under Development</h2>
+        <div class="flex flex-col align-middle justify-center">
+            <h1>Brian Toye</h1>
+            <div class="width-100 flex justify-center">
+                <Image
+                    class="profile-image-sq"
+                    src={profileImage}
+                    width="256"
+                    height="256"
+                    decoding="async"
+                    loading="eager"
+                    alt="A photo of myself in a Wikipedia cap"
+                />
+            </div>
+            <p class="content">
+                Hi there! I'm a Software Developer working for the UK Home
+                Office. Experienced in either a .NET or Java workplace on
+                primarily cloud based microservice architectures.
+                <br />
+                <br />
+                I enjoy working on projects that contribute positively to the community
+                which is embodied in my work on the
+                <a
+                    target="_blank"
+                    href="https://rollofhonour.nottinghamshire.gov.uk/"
+                >
+                    Nottinghamshire Roll of Honour</a
+                >.In my spare time, I engage in <a
+                    target="blank"
+                    href="https://smoothcomp.com/en/profile/1776129">BJJ</a
+                > keeping me physically active me. I would highly recommend it to
+                anyone with an active mind!
 
+                <br />
+                <br /> I aim occasionally share my thoughts and insights on various
+                topics that interest me here. Feel free to connect with me or contact
+                me on any of the platforms listed on my site!
+            </p>
+        </div>
         <style>
             main {
                 margin: auto;
                 padding: 1rem;
                 width: 800px;
                 max-width: calc(100% - 2rem);
+            }
+
+            .content {
+                padding: 1rem 1rem;
+                background-color: #ffffd1;
+                color: black;
+                border: 5px solid #f3b0c3;
+                border-radius: 5px;
+                position: relative;
             }
         </style>
     </main>
