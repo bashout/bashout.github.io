@@ -1,0 +1,235 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Nav from "../components/layout/Nav.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+type Props = CollectionEntry<"posts">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <style is:global>
+            :root {
+                --accent: 136, 58, 234;
+                --accent-light: 224, 204, 250;
+                --accent-dark: 49, 10, 101;
+                --accent-gradient: linear-gradient(
+                    45deg,
+                    rgb(var(--accent)),
+                    rgb(var(--accent-light)) 30%,
+                    white 60%
+                );
+            }
+
+            .hero-image {
+                width: 100%;
+            }
+            .hero-image img {
+                display: block;
+                margin: 0 auto;
+                border-radius: 12px;
+                box-shadow: var(--box-shadow);
+            }
+            .prose {
+                width: 720px;
+                max-width: calc(100% - 2em);
+                margin: auto;
+                padding: 1em;
+                color: rgb(var(--gray-dark));
+            }
+            .title {
+                margin-bottom: 1em;
+                padding: 1em 0;
+                text-align: center;
+                line-height: 1;
+            }
+            .title h1 {
+                margin: 0 0 0.5em 0;
+            }
+            .date {
+                margin-bottom: 0.5em;
+                color: rgb(var(--gray));
+            }
+            .last-updated-on {
+                font-style: italic;
+            }
+            @font-face {
+                font-family: "moderustic";
+                font-weight: normal;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            html {
+                font-family: "moderustic";
+                background: #edecde;
+            }
+
+            code {
+                font-family:
+                    Menlo,
+                    Monaco,
+                    Lucida Console,
+                    Liberation Mono,
+                    DejaVu Sans Mono,
+                    Bitstream Vera Sans Mono,
+                    Courier New,
+                    monospace;
+            }
+
+            * {
+                color: black;
+            }
+
+            h1 {
+                font-size: 4rem;
+                font-weight: 400;
+                line-height: 1.6;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 2rem;
+                font-weight: 300;
+                line-height: 1.4;
+                text-align: center;
+            }
+
+            a:hover {
+                text-decoration: underline 2px;
+                text-decoration-color: #cbaacb;
+                border-radius: 10px;
+            }
+
+            .content a {
+                text-decoration: underline 2px;
+                text-decoration-color: #cbaacb;
+                border-radius: 10px;
+            }
+            .pastel-purple {
+                color: #cbaacb;
+            }
+
+            .pastel-red {
+                color: #ffc6d0;
+            }
+
+            .pastel-blue {
+                color: #789cce;
+            }
+
+            .button {
+                margin: 1rem;
+                background: white;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                box-shadow: 4px 4px black;
+            }
+
+            .button:hover {
+                text-decoration: underline 2px;
+                text-decoration-color: #cbaacb;
+                border-radius: 10px;
+            }
+
+            .profile-image-sq {
+                border-radius: 10%;
+                border: 5px solid #f3b0c3;
+                object-fit: cover;
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+                animation: fadeIn 1s 0s ease-in-out;
+            }
+
+            .profile-image {
+                border-radius: 50%;
+                border: 5px solid #f3b0c3;
+                object-fit: cover;
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+                animation: fadeIn 1s 0s ease-in-out;
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(5rem);
+                }
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideInLeft {
+                from {
+                    transform: translateX(-100%);
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes shadow {
+                from {
+                    box-shadow: none;
+                }
+                to {
+                    box-shadow: 8px 8px #cbaacb;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <Nav />
+        <main>
+            <article>
+                <div class="hero-image">
+                    {
+                        heroImage && (
+                            <img
+                                width={1020}
+                                height={510}
+                                src={heroImage}
+                                alt=""
+                            />
+                        )
+                    }
+                </div>
+                <div class="prose">
+                    <div class="title">
+                        <div class="date">
+                            <FormattedDate date={pubDate} />
+                            {
+                                updatedDate && (
+                                    <div class="last-updated-on">
+                                        Last updated on{" "}
+                                        <FormattedDate date={updatedDate} />
+                                    </div>
+                                )
+                            }
+                        </div>
+                        <h1>{title}</h1>
+                        <hr />
+                    </div>
+                    <slot />
+                </div>
+            </article>
+        </main>
+        <Footer />
+    </body>
+</html>
