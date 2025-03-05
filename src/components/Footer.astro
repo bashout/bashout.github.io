@@ -1,0 +1,73 @@
+---
+const today = new Date();
+import { Icon } from "astro-icon/components";
+---
+
+<footer>
+    &copy; {today.getFullYear()} Brian Toye. All rights reserved.
+    <div class="contact-list">
+        <div class="contact-item">
+            <a
+                href="https://www.linkedin.com/in/brian-toye/"
+                target="_blank"
+                aria-label="LinkedIn"
+                ><Icon name="devicon:linkedin" /><p>brian-toye</p></a
+            >
+        </div>
+        <div class="contact-item">
+            <a href="mailto:dev@bashout.work" target="_blank" aria-label="Email"
+                ><Icon name="mdi:alternate-email" /><p>dev@bashout.work</p></a
+            >
+        </div>
+        <div class="contact-item">
+            <a
+                href="https://github.com/BashouT"
+                target="_blank"
+                aria-label="GitHub"
+                ><Icon name="mdi:github" /><p>dev@bashout.work</p></a
+            >
+        </div>
+    </div>
+</footer>
+<style>
+    footer {
+        padding: 2em 1em 6em 1em;
+        background: linear-gradient(var(--gray-gradient)) no-repeat;
+        color: rgb(var(--gray));
+        text-align: center;
+    }
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        margin-top: 1em;
+    }
+    .social-links a {
+        text-decoration: none;
+        color: rgb(var(--gray));
+    }
+    .social-links a:hover {
+        color: rgb(var(--gray-dark));
+    }
+
+    .contact-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding-bottom: 1rem;
+    }
+
+    .contact-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-item a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+</style>

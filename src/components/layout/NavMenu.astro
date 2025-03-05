@@ -22,16 +22,21 @@ const translatePath = useTranslatedPath(lang);
             {t("me")}
         </a>
     </li>
+    <li>
+        <a href={translatePath("/posts/")}>
+            {t("posts")}
+        </a>
+    </li>
     <LanguagePicker />
 </ul>
 
 <style>
-    li:nth-child(2) {
+    li:nth-child(3) {
         margin-right: auto;
     }
 
     @media screen and (min-width: 641px) {
-        li:nth-child(2) {
+        li:nth-child(3) {
             margin-right: auto;
         }
 

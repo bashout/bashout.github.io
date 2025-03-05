@@ -22,15 +22,21 @@ const { content } = Astro.props; // Destructure content and default language
                     <a
                         target="_blank"
                         href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"
+                        aria-label="Blazor icon"
                     >
                         <Icon name="devicon:blazor" />
                     </a>
-                    <a target="_blank" href="https://azure.microsoft.com/en-us">
+                    <a
+                        target="_blank"
+                        href="https://azure.microsoft.com/en-us"
+                        aria-label="Azure icon"
+                    >
                         <Icon name="devicon:azure" />
                     </a>
                     <a
                         target="_blank"
                         href="https://dotnet.microsoft.com/en-us/languages/csharp"
+                        aria-label="CSharp icon"
                     >
                         <Icon name="devicon:csharp" />
                     </a>
@@ -45,18 +51,24 @@ const { content } = Astro.props; // Destructure content and default language
                     {content.jobs[1].map((job: String) => <li>{job}</li>)}
                 </ul>
                 <div class="flex flex-row justify-center gap-12">
-                    <a target="_blank" href="https://angular.dev/">
+                    <a
+                        target="_blank"
+                        href="https://angular.dev/"
+                        aria-label="Angular icon"
+                    >
                         <Icon name="devicon:angular" />
                     </a>
                     <a
                         target="_blank"
                         href="https://learn.microsoft.com/en-us/dotnet/core/introduction"
+                        aria-label=".NET Core icon"
                     >
                         <Icon name="devicon:dotnetcore" />
                     </a>
                     <a
                         target="_blank"
                         href="https://azure.microsoft.com/en-us/products/devops/"
+                        aria-label="Azure DevOps icon"
                     >
                         <Icon name="devicon:azuredevops" />
                     </a>
@@ -74,16 +86,22 @@ const { content } = Astro.props; // Destructure content and default language
                     <a
                         target="_blank"
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                        aria-label="JavaScript icon"
                     >
                         <Icon name="devicon:javascript" />
                     </a>
                     <a
                         target="_blank"
                         href="https://developer.mozilla.org/en-US/docs/Glossary/HTML"
+                        aria-label="HTML5 icon"
                     >
                         <Icon name="devicon:html5" />
                     </a>
-                    <a target="_blank" href="https://git-scm.com/">
+                    <a
+                        target="_blank"
+                        href="https://git-scm.com/"
+                        aria-label="Git icon"
+                    >
                         <Icon name="devicon:git" />
                     </a>
                 </div>
