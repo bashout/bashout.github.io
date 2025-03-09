@@ -15,20 +15,25 @@ const posts = (await getCollection("posts")).sort(
             <ul>
                 {
                     posts.map((post) => (
-                        <li>
-                            <a href={`/posts/${post.id}/`}>
+                        <li class="post pastel-purple">
+                            <a
+                                href={`/posts/${post.id}/`}
+                                class="flex flex-row"
+                            >
                                 <Image
-                                    width={720}
-                                    height={360}
+                                    width={360}
+                                    height={180}
                                     src={post.data.heroImage}
                                     decoding="async"
                                     loading="eager"
                                     alt=""
                                 />
-                                <h4 class="title">{post.data.title}</h4>
-                                <p class="date">
-                                    <FormattedDate date={post.data.pubDate} />
-                                </p>
+                                <div>
+                                    <h2 class="title">{post.data.title}</h2>
+                                    <h3 class="date">
+                                        <FormattedDate date={post.data.pubDate} />
+                                    </h3>
+                                <div>
                             </a>
                         </li>
                     ))
@@ -37,3 +42,18 @@ const posts = (await getCollection("posts")).sort(
         </section>
     </main>
 </Layout>
+
+<style>
+    img {
+        border-radius: 5px 5px;
+        margin-right: .5rem;
+    }
+
+    .post {
+        border: 5px solid #f3b0c3;
+        border-radius: 5px;
+        margin: .5rem;
+        background-color: #ffffd1;
+        padding: .5rem;
+    }
+</style>
