@@ -4,7 +4,6 @@ import { Icon } from "astro-icon/components";
 ---
 
 <footer>
-    &copy; {today.getFullYear()} Brian Toye. All rights reserved.
     <div class="contact-list">
         <div class="contact-item">
             <a
@@ -28,6 +27,7 @@ import { Icon } from "astro-icon/components";
             >
         </div>
     </div>
+    &copy; {today.getFullYear()} Brian Toye. All rights reserved.
 </footer>
 <style>
     footer {
@@ -69,5 +69,11 @@ import { Icon } from "astro-icon/components";
         display: flex;
         align-items: center;
         gap: 8px;
+    }
+
+    @media screen and (max-width: 640px) {
+        .contact-list p {
+            display: none;
+        }
     }
 </style>
