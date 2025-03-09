@@ -21,14 +21,14 @@ const posts = (await getCollection("posts")).sort(
                                 class="flex post flex-row"
                             >
                                 <Image
-                                    width={360}
-                                    height={180}
+                                    width={180}
+                                    height={90}
                                     src={post.data.heroImage}
                                     decoding="async"
                                     loading="eager"
                                     alt=""
                                 />
-                                <div>
+                                <div class="post-summary">
                                     <h2 class="title">{post.data.title}</h2>
                                     <h3 class="date">
                                         <FormattedDate date={post.data.pubDate} />
@@ -54,11 +54,33 @@ const posts = (await getCollection("posts")).sort(
     }
 
     .post {
-        justify-content: center; /* Center horizontally */
+        justify-content: center;
         align-items: center;     /* Center vertically */
-        height: 17rem;
+        height: 9rem;
         border: 5px solid #f3b0c3;
         border-radius: 5px;
         background-color: #ffffd1;
+    }
+
+    .post-summary {
+        margin: auto;
+    }
+
+    @media screen and (max-width: 640px) {
+        img {
+            display: none;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        .post {
+            height: 5rem;
+        }
+
+        .post-summary {
+            margin: auto;
+        }
     }
 </style>
