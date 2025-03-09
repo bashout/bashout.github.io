@@ -15,10 +15,10 @@ const posts = (await getCollection("posts")).sort(
             <ul>
                 {
                     posts.map((post) => (
-                        <li class="post pastel-purple">
+                        <li>
                             <a
                                 href={`/posts/${post.id}/`}
-                                class="flex flex-row"
+                                class="flex post flex-row"
                             >
                                 <Image
                                     width={360}
@@ -46,14 +46,19 @@ const posts = (await getCollection("posts")).sort(
 <style>
     img {
         border-radius: 5px 5px;
-        margin-right: .5rem;
+        margin: auto;
+    }
+
+    li {
+        padding: .5rem;
     }
 
     .post {
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        height: 17rem;
         border: 5px solid #f3b0c3;
         border-radius: 5px;
-        margin: .5rem;
         background-color: #ffffd1;
-        padding: .5rem;
     }
 </style>
