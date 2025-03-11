@@ -16,19 +16,24 @@ const posts = (await getCollection("posts")).sort(
                 {
                     posts.map((post) => (
                         <li>
-                            <a href={`/posts/${post.id}/`}>
+                            <a
+                                href={`/posts/${post.id}/`}
+                                class="flex post flex-row"
+                            >
                                 <Image
-                                    width={720}
-                                    height={360}
+                                    width={180}
+                                    height={90}
                                     src={post.data.heroImage}
                                     decoding="async"
                                     loading="eager"
                                     alt=""
                                 />
-                                <h4 class="title">{post.data.title}</h4>
-                                <p class="date">
-                                    <FormattedDate date={post.data.pubDate} />
-                                </p>
+                                <div class="post-summary">
+                                    <h2 class="title">{post.data.title}</h2>
+                                    <h3 class="date">
+                                        <FormattedDate date={post.data.pubDate} />
+                                    </h3>
+                                <div>
                             </a>
                         </li>
                     ))
@@ -37,3 +42,45 @@ const posts = (await getCollection("posts")).sort(
         </section>
     </main>
 </Layout>
+
+<style>
+    img {
+        border-radius: 5px 5px;
+        margin-left: .5rem;
+    }
+
+    li {
+        padding: .5rem;
+    }
+
+    .post {
+        justify-content: center;
+        align-items: center;     /* Center vertically */
+        height: 9rem;
+        border: 5px solid #f3b0c3;
+        border-radius: 5px;
+        background-color: #ffffd1;
+    }
+
+    .post-summary {
+        margin: auto;
+    }
+
+    @media screen and (max-width: 640px) {
+        img {
+            display: none;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        .post {
+            height: 5rem;
+        }
+
+        .post-summary {
+            margin: auto;
+        }
+    }
+</style>
