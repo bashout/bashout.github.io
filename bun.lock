@@ -9,7 +9,7 @@
         "@astrojs/tailwind": "^6.0.2",
         "@iconify-json/devicon": "^1.2.24",
         "@iconify-json/mdi": "^1.2.3",
-        "astro": "^5.8.0",
+        "astro": "^5.8.1",
         "astro-icon": "^1.1.5",
         "sharp": "^0.33.5",
         "tailwindcss": "^3.4.17",
@@ -101,7 +101,7 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.4", "", { "os": "win32", "cpu": "x64" }, "sha512-nOT2vZNw6hJ+z43oP1SPea/G/6AbN6X+bGNhNuq8NtRHy4wsMhw765IKLNmnjek7GvjWBYQ8Q5VBoYTFg9y1UQ=="],
 
-    "@iconify-json/devicon": ["@iconify-json/devicon@1.2.24", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-Y46dfXckSh04IWeV8hB/7IOkbq6H+oV+wCapz5PDx2Z4aXqGx6Fm5ZcKP9Jt9YiEhqN02Hehl4cni3Vp+xfheg=="],
+    "@iconify-json/devicon": ["@iconify-json/devicon@1.2.25", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-AdiZZ6oF1jLXPdjLMlNVpNZ2Wun7DfWtd7Vg/+QnGIP18Rx6GAoPwePJuno0uiDEuZ7eGII7Du0HTC0Zdnu0XA=="],
 
     "@iconify-json/mdi": ["@iconify-json/mdi@1.2.3", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg=="],
 
